@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef, useEffect } from "react";
 import createUndoRedo from "./UndoRedo";
 import Todo from "./Todo";
 import Logs from "./Logs";
-import "../../App.css";
+import "../App.css";
 
 function useTimeline(initialValue) {
     const timelineRef = useRef(new createUndoRedo(initialValue));
@@ -32,7 +32,7 @@ const createTodo = value => ({
     id: Date.now()
 });
 
-export default function Undo1() {
+export default function Undo() {
     const [value, setValue] = useState("");
     const [
         todos,
@@ -80,7 +80,7 @@ export default function Undo1() {
         },
         [undo, redo]
     );
-    console.log(timeline);
+    // console.log(timeline);
     return (
         <div className="App">
             <div className="left">
